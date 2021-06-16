@@ -1,6 +1,8 @@
 package dsa450practiesheet.arrays;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 public class ReverseArray {
@@ -18,6 +20,10 @@ public class ReverseArray {
             start++;
             end--;
         }
+        //for reversing the list type parameter using library functions
+        List<Integer> list = new java.util.ArrayList<>(List.of(6, 7, 8, 9, 10));
+        Collections.reverse(list);
+        System.out.println(list); // 10, 9, 8, 7, 6
         System.out.println(Arrays.toString(arr)); // 5, 4, 3, 2, 1
         recursiveReverseArray(arr, 0 , 4);
         System.out.println(Arrays.toString(arr)); // 1, 2, 3, 4, 5
