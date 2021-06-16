@@ -2,8 +2,16 @@ package datastructures.tree;
 
 public class Main {
     public static void main(String[] args) {
-        BinaryTree bt = new BinaryTree();
-        bt.display();
+        //binary tree
+        //BinaryTree bt = new BinaryTree();
+        //bt.display2();
+
+        //Binary Search tree
+        int[] inputArray = {10,20,30,40,50,60,70};
+        MyBinarySearchTree bst = new MyBinarySearchTree(inputArray);
+        //bst.display();
+        System.out.println(bst.find(100));
+        System.out.println(bst.max());
     }
 }
 

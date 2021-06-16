@@ -40,11 +40,11 @@ public class GenericTree {
         return newNode;
     }
 
-    public void display() {
-        display(root);
+    public void display1() {
+        display1(root);
     }
 
-    private void display(Node node) {
+    private void display1(Node node) {
         //node data
         String str = node.data + "=>";
         for (int i = 0; i < node.children.size(); i++) {
@@ -56,7 +56,7 @@ public class GenericTree {
         System.out.println(str);
         //display for all the nodes
         for (int i = 0; i < node.children.size(); i++) {
-            display(node.children.get(i));
+            display1(node.children.get(i));
         }
     }
 }
