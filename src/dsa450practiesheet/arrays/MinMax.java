@@ -19,6 +19,7 @@ public class MinMax {
         System.out.println(Arrays.stream(arr).max().getAsInt()); //90
     }
 
+
     // minimum element in the array
     public static int min(int[] arr) {
         int min = arr[0];
