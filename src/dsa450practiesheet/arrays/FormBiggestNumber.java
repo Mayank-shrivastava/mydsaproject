@@ -1,4 +1,4 @@
-package dsa450practiesheet;
+package dsa450practiesheet.arrays;
 
 
 import java.util.Arrays;
