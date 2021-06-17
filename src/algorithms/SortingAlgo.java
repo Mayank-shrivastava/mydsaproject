@@ -16,31 +16,32 @@ public class SortingAlgo {
     }
 
 
-    //selection-sort
-    private static void selectionSort(int[] arr) {
-        // basic idea ->
-        //       find the min element from the unsorted arr and put that element to the starting of the sorted arr
-        for (int i = 0; i < arr.length - 1; i++) {
-            int min = i;
-            for (int j = i + 1; j < arr.length; j++) {
-                if(arr[min] > arr[j]) {
-                    min = j;
+    //Algo for selection sort ->
+    // 1.counter goes from 0 to arr.length - 1(excluded)
+    // 2.find min element index
+    // 3.swap the element at min index to the element at counter value;
+    public static void selectionSort(int[] arr) {
+        //counter goes from 0 to arr.length - 1
+        for(int counter = 0; counter < arr.length - 1; counter++) {
+            int minIdx = counter;
+            for(int j = counter + 1; j < arr.length; j++) {
+                if(arr[j] < arr[minIdx]) {
+                    minIdx = j;
                 }
-                //swap
-                int temp = arr[min];
-                arr[min] = arr[i];
-                arr[i] = temp;
             }
+            //swap value at minIdx and counter
+            int temp = arr[minIdx];
+            arr[minIdx] = arr[counter];
+            arr[counter] = temp;
         }
     }
 
     //bubble-sort
-    private static void bubbleSort(int[] arr) {
         //basic idea -> compare each element with the adjacent element and
         //if the element is greater than the adjacent element swap both the elements
         //Performance of the bubble sort is not good for the large data set
         //Gives complexity of O(n^2) where n is the number of input data set
-
+    private static void bubbleSort(int[] arr) {
         for (int pass = 0; pass < arr.length - 1; pass++) {
             for (int j = 0; j < arr.length - 1 - pass; j++) {
                 if (arr[j] > arr[j + 1]) {
@@ -53,11 +54,15 @@ public class SortingAlgo {
         }
     }
 
-    //insertion-sort
-    private static void insertionSort(int[] arr) {
+    //Algo for insertion-sort ->
+        // counter goes from index 1 to  arr.length - 1(included)
+        // take value at counter index
+        // shifting work
+    public static void insertionSort(int[] arr) {
         for(int counter = 1; counter < arr.length; counter++) {
             int val = arr[counter];
             int j = counter - 1;
+            //shifting work
             while(j >= 0 && arr[j] > val) {
                 arr[j + 1] = arr[j];
                 j = j - 1;
