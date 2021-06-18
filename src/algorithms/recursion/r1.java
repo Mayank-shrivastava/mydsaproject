@@ -7,7 +7,57 @@ public class r1 {
         //PDI(5);
         //System.out.println(fact(4));
         //System.out.println(power(2,5));
-        System.out.println(nthFib(6));
+        //System.out.println(nthFib(6));
+        int[] arr = {1, 2, 3, 4, 5};
+        System.out.println(isSorted(arr, 1));
+        int[] arr2 = {6, 8, 1, 1, 8, 3, 4};
+        System.out.println(firstIndex(arr2, 0, 8));
+        System.out.println(lastIndex(arr2, 0, 8));
+    }
+
+    //last-index
+    public static int lastIndex(int[] arr, int si, int data) {
+        //base-case
+        if(si == arr.length) {
+            return -1;
+        }
+        int index = lastIndex(arr, si + 1, data);
+        if(index == -1) {
+            if(arr[si] == data) {
+                return si;
+            } else {
+                return -1;
+            }
+        } else {
+            return index;
+        }
+    }
+
+    //first-index
+    public static int firstIndex(int[] arr, int si, int data) {
+        //base case
+        if (si == arr.length) {
+            return -1;
+        }
+        if (arr[si] == data) {
+            return si;
+        } else {
+            int idx = firstIndex(arr, si + 1, data);
+            return idx;
+        }
+    }
+
+
+    public static boolean isSorted(int[] arr, int si) {
+        if (si == arr.length - 1) {
+            return true;
+        }
+        if (arr[si] > arr[si + 1]) {
+            return false;
+        } else {
+            boolean response = isSorted(arr, si + 1);
+            return response;
+        }
     }
 
     public static int nthFib(int n) {
