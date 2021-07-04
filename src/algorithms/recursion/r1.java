@@ -1,5 +1,7 @@
 package algorithms.recursion;
 
+import java.util.Arrays;
+
 public class r1 {
     public static void main(String[] args) {
         //recursive print
@@ -13,6 +15,67 @@ public class r1 {
         int[] arr2 = {6, 8, 1, 1, 8, 3, 4};
         System.out.println(firstIndex(arr2, 0, 8));
         System.out.println(lastIndex(arr2, 0, 8));
+        //pattern execution
+        pattern(5, 1, 1);
+        //bubble-sort execution
+        int[] arr3 = {50,40,30,20,10};
+        bubbleSort(arr3, 0, arr.length - 1);
+        System.out.println(Arrays.toString(arr3));
+        System.out.println(Arrays.toString(allIndices(arr2, 0, 8, 0)));
+
+    }
+
+    //program to return an array containing all indices at which the element is present
+    public static int[] allIndices(int[] arr, int si, int data, int count) {
+        //base-case
+        if(si == arr.length) {
+            int[] base = new int[count];
+            return base;
+        }
+        int[] indices = null;
+        if(arr[si] == data) {
+            indices = allIndices(arr, si + 1, data, count + 1);
+        } else {
+            indices = allIndices(arr, si + 1, data, count);
+        }
+        if(arr[si] == data) {
+            indices[count] = si;
+        }
+        return indices;
+    }
+
+    //bubble-sort using recursion
+    public static void bubbleSort(int[] arr, int si, int li) {
+        //base-case
+        if(li == 0) {
+            return;
+        }
+        if(si == li) {
+            bubbleSort(arr, 0, li - 1);
+            return;
+        }
+        if(arr[si] > arr[si + 1]) {
+            //swap
+            int temp = arr[si];
+            arr[si] = arr[si + 1];
+            arr[si + 1] = temp;
+        }
+        bubbleSort(arr, si + 1,li);
+    }
+
+    //pattern
+    public static void pattern(int N, int row, int col) {
+        //base-case
+        if(row > N) {
+            return;
+        }
+        if(col > row) {
+            System.out.println();
+            pattern(N,row + 1, 1);
+            return;
+        }
+        System.out.print("*");
+        pattern(N, row, col + 1);
     }
 
     //last-index

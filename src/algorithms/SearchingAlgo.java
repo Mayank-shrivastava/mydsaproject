@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class SearchingAlgo {
     public static void main(String[] args) {
-        int[] arr1 = {10, 20, 30, 40, 50, 60};
+        int[] arr1 = {10, 20, 30, 40, 50};
         int[] arr2 = {60, 50, 40, 30, 20, 10};
         int[] arr3 = {34, 54, 25, 55, 64};
         System.out.println(linearSearch(50, arr1));

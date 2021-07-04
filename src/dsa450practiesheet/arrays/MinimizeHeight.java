@@ -11,17 +11,38 @@ public class MinimizeHeight {
     }
 
     public int getMinDiff(int[] arr, int n, int k) {
-        // k = modifying factor
-        // n = length  of the array
-        for(int i = 0; i < arr.length; i++) {
-            if(arr[i] - k > 0) {
-                arr[i] = arr[i] - k;
-            } else {
-                arr[i] = arr[i] + k;
+        // greedy-approach problem
+        if(n == 1) {
+            return 0;
+        }
+
+        Arrays.sort(arr);
+        int ans = arr[n - 1] - arr[0];
+        int small = arr[0] + k;
+        int big = arr[n - 1] - k;
+        if(small > big) {
+            //swap small and big
+            int temp = small;
+            small = big;
+            big = temp;
+        }
+
+        //traverse for the middle elements
+        for(int i = 1; i < n - 1; i++) {
+            int subtract = arr[i] - k;
+            int add = arr[i] + k;
+
+            if(subtract >= small || add <= big) {
+                continue;
+            }
+
+            if(big - subtract <= add - small) {
+                small = subtract;
+            } else{
+                big = add;
             }
         }
-        Arrays.sort(arr);
-        System.out.println(Arrays.toString(arr));
-        return arr[arr.length - 1] - arr[0];
+
+        return Math.min(ans, big - small);
     }
 }
