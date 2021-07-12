@@ -2,7 +2,7 @@ package algorithms.recursion;
 
 import java.util.Arrays;
 
-public class r1 {
+public class Recursion {
     public static void main(String[] args) {
         //recursive print
         //printDecreasing(5);
@@ -26,7 +26,7 @@ public class r1 {
     }
 
     //program to return an array containing all indices at which the element is present
-    public static int[] allIndices(int[] arr, int si, int data, int count) {
+    private static int[] allIndices(int[] arr, int si, int data, int count) {
         //base-case
         if(si == arr.length) {
             int[] base = new int[count];
@@ -45,7 +45,7 @@ public class r1 {
     }
 
     //bubble-sort using recursion
-    public static void bubbleSort(int[] arr, int si, int li) {
+    private static void bubbleSort(int[] arr, int si, int li) {
         //base-case
         if(li == 0) {
             return;
@@ -64,7 +64,7 @@ public class r1 {
     }
 
     //pattern
-    public static void pattern(int N, int row, int col) {
+    private static void pattern(int N, int row, int col) {
         //base-case
         if(row > N) {
             return;
@@ -79,7 +79,7 @@ public class r1 {
     }
 
     //last-index
-    public static int lastIndex(int[] arr, int si, int data) {
+    private static int lastIndex(int[] arr, int si, int data) {
         //base-case
         if(si == arr.length) {
             return -1;
@@ -97,7 +97,7 @@ public class r1 {
     }
 
     //first-index
-    public static int firstIndex(int[] arr, int si, int data) {
+    private static int firstIndex(int[] arr, int si, int data) {
         //base case
         if (si == arr.length) {
             return -1;
@@ -111,7 +111,7 @@ public class r1 {
     }
 
 
-    public static boolean isSorted(int[] arr, int si) {
+    private static boolean isSorted(int[] arr, int si) {
         if (si == arr.length - 1) {
             return true;
         }
@@ -123,28 +123,28 @@ public class r1 {
         }
     }
 
-    public static int nthFib(int n) {
+    private static int nthFib(int n) {
         if (n == 0) return 0;
         if (n == 1) return 1;
         int fibn = nthFib(n - 1) + nthFib(n - 2);
         return fibn;
     }
 
-    public static int power(int x, int n) {
+    private static int power(int x, int n) {
         //base-case
         if (n == 1) return x;
         int ans = x * power(x, n - 1);
         return ans;
     }
 
-    public static void printDecreasing(int n) {
+    private static void printDecreasing(int n) {
         //base case
         if (n == 0) return;
         System.out.println(n);
         printDecreasing(n - 1);
     }
 
-    public static int fact(int n) {
+    private static int fact(int n) {
         //base-case
         if (n == 1) return 1;
         int fnm1 = fact(n - 1);
@@ -152,7 +152,7 @@ public class r1 {
         return fn;
     }
 
-    public static void PDI(int n) {
+    private static void PDI(int n) {
         //base case
         if (n == 0) return;
         System.out.println(n);

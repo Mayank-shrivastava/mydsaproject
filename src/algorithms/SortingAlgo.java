@@ -70,18 +70,6 @@ public class SortingAlgo {
             arr[j + 1] = val;
         }
     }
-
-    //quick-sort
-    private static void quickSort(int[] arr) {
-
-    }
-
-    //merge-sort
-    private static void mergeSort(int[] arr) {
-        //recursion based algorithm
-
-    }
-
 }
 
 

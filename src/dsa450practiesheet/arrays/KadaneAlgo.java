@@ -30,9 +30,7 @@ public class KadaneAlgo {
                 currSum = nums[i];
             }
             //comparison with the overall sum
-            if (currSum > overAllSum) {
-                overAllSum = currSum;
-            }
+            overAllSum = Math.max(overAllSum, currSum);
         }
         return overAllSum;
     }
