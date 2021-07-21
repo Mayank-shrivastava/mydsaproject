@@ -30,7 +30,6 @@ public class QueenCombination2DKill {
         }
         //not place
         queenCombination2DKill(boxes, row, col+1, totalQueens, queenPlacedSoFar, ans);
-
     }
 
     public static boolean isSafeToPlaceTheQueen(boolean[][] boxes, int row, int col) {
